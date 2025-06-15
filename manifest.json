@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "AI Fact Checker",
+    "version": "1.0",
+    "description": "Highlight text and fact check it with AI",
+    "permissions": ["activeTab", "scripting", "contextMenus", "storage"],
+    "host_permissions": ["http://127.0.0.1/*"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "128": "icon.png"
+    }
+  }
+  
